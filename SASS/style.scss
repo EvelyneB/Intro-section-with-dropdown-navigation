@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Kumbh+Sans:wght@400;700&family=Overpass:wght@400;700&display=swap');
+
+
+$almost-white: hsl(0, 0%, 98%);
+$medium-gray: hsl(0, 0%, 41%);
+$almost-black: hsl(0, 0%, 8%);
+$font-size: 18px;
+$font-family: "Epilogue", sans-serif;
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+}
+
+@mixin icon{
+    width: 1rem;
+    margin: 0 1rem;
+    padding-right:0 ;
+    cursor: pointer;
+}
+
+@mixin arrow-animation{
+    transform: rotate(180deg);
+    transition: all .9s ease;
+}
+
+@mixin shadow{
+    box-shadow: 6px 13px 36px 4px rgba(0,0,0,0.48);
+}
+
+*{
+padding: 0; 
+margin: 0; 
+box-sizing: border-box; 
+} 
+
+body{
+    color:$medium-gray;
+    font-family: $font-family;
+    position: relative;
+}
+
+.navigation-bar{
+    display: flex;
+    justify-content: space-between; 
+    margin: 0 1rem 1rem 1rem;
+}
+
+.grey-overlay{
+    position: fixed; /* Sit on top of the page content */
+    width: 70%; 
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $almost-black;
+    opacity: 0.5;
+    z-index: 1; 
+    display: none;  
+}
+
+.white-overlay{
+    position: fixed;
+    background-color: $almost-white;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 64%;
+    height: 100%; /* Full height (cover the whole page) */
+    display: none;    
+}
+
+.right-desktop-menu{
+    display: none;
+}
+
+.menu{
+    position: fixed;
+    padding: 3.5rem 1rem 1rem 2rem;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    list-style-type: none;
+    gap: 2rem;
+    display: none;
+
+.sub-menu a{
+    text-decoration: none;
+    color: $medium-gray;
+    font-size: 1rem;
+    list-style-type: none;
+    padding-left: 0rem;
+}
+}
+
+.visible{
+    display: flex;
+}
+
+.close-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end ;
+    margin-top: 1.5rem ;
+    padding-right: 1rem;
+}
+
+.close{  
+    position: fixed;
+    content: url(/images/icon-close-menu.svg);
+    cursor: pointer;
+    width: 1.8rem;
+    z-index: 3;
+    display: none;
+}
+
+.arrow-down{
+    margin-left: 1rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.features-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    display: none;
+}
+
+.arrow-down-features.active,
+.arrow-down-company.active{
+    @include arrow-animation;
+}
+
+.todo,
+.history{
+    margin-top: 2rem;
+}
+.todo::before{
+    content: url(/images/icon-todo.svg);
+    @include icon;
+}
+
+.calendar::before{
+    content: url(/images/icon-calendar.svg);
+    @include icon;
+}
+
+.reminders::before{
+    content: url(/images/icon-reminders.svg);
+    @include icon;
+}
+
+.planning::before{
+    content: url(/images/icon-planning.svg);
+    @include icon;
+}
+
+.company-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 1rem;  
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.company-dropdown a{
+    text-decoration: none;
+    color: $medium-gray;
+}
+
+.hamburger-menu{
+    cursor: pointer;
+}
+
+.illustration{
+    display: block;
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+    background-size: cover;
+}
+
+.illustration img{
+    width: 100%;
+    height: auto;
+}
+
+.h1{
+   @include center;
+    color: $almost-black;
+    font-size: 2.2rem;
+}
+
+.h2{
+    margin: 1.3rem 0.8rem 1.5rem 0.8rem;
+    color: $medium-gray;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    font-family: $font-family;
+    font-size: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+    color: $almost-white;
+    background-color: $almost-black;
+    border-radius: 1rem;
+    width: 8.5rem;
+    height: 3rem;
+    @include center;
+    border-style: none;
+    cursor: pointer;
+
+    &:hover{
+        color: $almost-black;
+        background-color: $almost-white;
+        border: black solid 1px;
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+}
+
+.footer img{
+    width: 3.5rem;
+    height:auto;
+}
+
+.databiz img{
+    width: 5rem;
+}
+/*****************MEDIA QUERY *****************/
+
+@media (min-width:769px){
+
+    .container{
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 44%;
+        grid-template-rows: 8rem 37rem 2rem;
+    }
+
+    .header{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .close-container{
+        display: none;
+    }
+
+    .navigation-bar{
+        margin-top: 2rem;
+        margin-left: 2.2rem;
+        padding-right: 8rem;
+        grid-column-start: 1;
+        grid-column-end:2 ;
+        grid-row: 1/4;
+        width: 100%;
+    }
+
+    .menu{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-left: 0;
+        padding-top: 0;
+        padding-left: 7rem;
+        width: 42rem;
+        gap: 0;
+    }
+    
+#features::after,
+#company::after{
+   display: none;
+}
+
+    .sub-menu {
+        list-style-type: none;
+        margin-left: 2rem;
+        margin-right: 1rem;     
+    }
+
+    .sub-menu a{
+        text-decoration: none;
+        color: $medium-gray;
+        font-weight: normal;
+        font-size: 0.9rem;
+    }
+
+    .features-dropdown{
+        position: absolute;
+        margin-top: 1rem;
+        left: 10%;
+        background-color: white;
+        @include shadow;
+        border-radius: 1rem;
+        gap: 0.8rem;
+        width: 10rem;
+        height: 10rem;
+        padding-left: 0.5rem;
+        padding-bottom: 1rem;
+        display: none;
+    }
+    
+    .todo{
+        margin-top: 1.5rem;
+    }
+
+    .company-dropdown{
+        display: none;
+        background-color: white;
+        @include shadow;
+        border-radius: 1rem;
+        width: 7.5rem;
+        height: 8rem;
+        gap: 1rem;
+        padding-left: 1.3rem;
+        margin-top: 1rem;
+        position: absolute;
+        left: 38%;
+    }
+
+    .history{
+        margin-top: 1.5rem;
+    }
+    
+    .show{
+        display: flex;
+    }
+
+
+
+    .right-desktop-menu{
+        display: flex;
+        align-items: flex-start;
+        margin-top: -1rem;
+    }
+
+    .right-desktop-menu .sub-menu{
+        margin-right: 3rem;
+        margin-left: 0;
+    }
+
+    #login{
+        padding-top:1rem;
+    }
+
+    .register{
+        font-family: $font-family;
+        font-size: 1rem;
+        color: $medium-gray;
+        background-color: $almost-white;
+        padding: 1rem 1rem 1.7rem 1rem;
+        margin-right: -2.7rem;
+        width: 6.3rem;
+        border-radius: 0.9rem;
+        height: 1.1rem;
+        cursor: pointer;
+    }
+
+    .hamburger-menu{
+        display: none;
+    }
+
+    .illustration{
+        background-image: url(/images/image-hero-desktop.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100%;
+        max-width: 100%;
+        grid-row: 2/4;
+        grid-column: 2;
+    }
+
+    .illustration img{
+        display: none;
+    }
+
+    .main{
+        
+        margin-top: 6rem;
+        grid-column: 1/2;
+        grid-row: 2/4;
+    }
+
+    .h1{
+        font-size: 5rem;
+        padding: 0 6.5rem 2.6rem 10rem;
+    }
+
+    .h2{
+        font-size: 1.1rem;
+        padding: 0 12rem 3.5rem 10rem;
+        text-align: left;
+        margin: 0;
+    }
+
+    .button-container{
+        padding-left: 10rem;
+        margin-right: 0;
+        justify-content: left;
+    }
+
+    .button{
+        padding-top: 1.2rem;
+        width: 10rem;
+        height: 3.6rem;
+        font-weight:700;
+    }
+
+    .footer{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        padding-left: 10rem;
+        justify-content: start;
+        
+    }
+
+    .footer img{
+        margin-right: 2.5rem;
+        width: 5rem;
+        height:auto;
+    }
+
+    .databiz img{
+        width: 7rem;
+    }
+
+}
