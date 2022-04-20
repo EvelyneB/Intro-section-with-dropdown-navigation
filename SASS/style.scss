@@ -109,7 +109,7 @@ body{
 
 .close{  
     position: fixed;
-    content: url(/images/icon-close-menu.svg);
+    content: url(images/icon-close-menu.svg);
     cursor: pointer;
     width: 1.8rem;
     z-index: 3;
@@ -139,22 +139,22 @@ body{
     margin-top: 2rem;
 }
 .todo::before{
-    content: url(/images/icon-todo.svg);
+    content: url(images/icon-todo.svg);
     @include icon;
 }
 
 .calendar::before{
-    content: url(/images/icon-calendar.svg);
+    content: url(images/icon-calendar.svg);
     @include icon;
 }
 
 .reminders::before{
-    content: url(/images/icon-reminders.svg);
+    content: url(images/icon-reminders.svg);
     @include icon;
 }
 
 .planning::before{
-    content: url(/images/icon-planning.svg);
+    content: url(images/icon-planning.svg);
     @include icon;
 }
 
@@ -384,7 +384,7 @@ body{
     }
 
     .illustration{
-        background-image: url(/images/image-hero-desktop.png);
+        background-image: url(images/image-hero-desktop.png);
         background-repeat: no-repeat;
         background-size: contain;
         height: 100%;

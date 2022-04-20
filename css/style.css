@@ -99,7 +99,7 @@ body {
 
 .close {
   position: fixed;
-  content: url(/images/icon-close-menu.svg);
+  content: url(images/icon-close-menu.svg);
   cursor: pointer;
   width: 1.8rem;
   z-index: 3;
@@ -138,7 +138,7 @@ body {
 }
 
 .todo::before {
-  content: url(/images/icon-todo.svg);
+  content: url(images/icon-todo.svg);
   width: 1rem;
   margin: 0 1rem;
   padding-right: 0;
@@ -146,7 +146,7 @@ body {
 }
 
 .calendar::before {
-  content: url(/images/icon-calendar.svg);
+  content: url(images/icon-calendar.svg);
   width: 1rem;
   margin: 0 1rem;
   padding-right: 0;
@@ -154,7 +154,7 @@ body {
 }
 
 .reminders::before {
-  content: url(/images/icon-reminders.svg);
+  content: url(images/icon-reminders.svg);
   width: 1rem;
   margin: 0 1rem;
   padding-right: 0;
@@ -162,7 +162,7 @@ body {
 }
 
 .planning::before {
-  content: url(/images/icon-planning.svg);
+  content: url(images/icon-planning.svg);
   width: 1rem;
   margin: 0 1rem;
   padding-right: 0;
@@ -424,7 +424,7 @@ body {
     display: none;
   }
   .illustration {
-    background-image: url(/images/image-hero-desktop.png);
+    background-image: url(images/image-hero-desktop.png);
     background-repeat: no-repeat;
     background-size: contain;
     height: 100%;
