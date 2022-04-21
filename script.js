@@ -45,7 +45,7 @@ company.addEventListener("click", () =>{
 window.addEventListener('mouseup', function(event){
 	var dropFeatures = document.querySelector('.features-dropdown');
     var btnFeatures = document.getElementById("features");
-	if (event.target != dropFeatures && event.target != btnFeatures){
+	if (event.target != dropFeatures && event.target != btnFeatures && event.target.parentNode != dropFeatures){
         dropFeatures.classList.remove ('show');
     }
 });
@@ -56,7 +56,7 @@ window.addEventListener('mouseup', function(event){
 window.addEventListener('mouseup', function(event){
 	var dropCompany = document.querySelector('.company-dropdown');
     var btnCompany = document.getElementById("company");
-	if (event.target != dropCompany && event.target != btnCompany){
+	if (event.target != dropCompany && event.target != btnCompany && event.target.parentNode != dropCompany){
         dropCompany.classList.remove ('show');
     }
 });
