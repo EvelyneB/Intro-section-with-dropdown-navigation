@@ -40,7 +40,8 @@ company.addEventListener("click", () =>{
 });
 
 
-// Close the Features dropdown menu if the user clicks outside of it
+// Close the Features dropdown menu if the user clicks outside of it and avoid closing it when clicling inside of it(child)
+
 
 window.addEventListener('mouseup', function(event){
 	var dropFeatures = document.querySelector('.features-dropdown');
@@ -50,7 +51,7 @@ window.addEventListener('mouseup', function(event){
     }
 });
 
-// Close the Company dropdown menu if the user clicks outside of it
+// Close the Company dropdown menu if the user clicks outside of it and avoid closing it when clicling inside of it (child)
 
 
 window.addEventListener('mouseup', function(event){
