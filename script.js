@@ -39,3 +39,24 @@ company.addEventListener("click", () =>{
     arrowDownCompany.classList.toggle("active");
 });
 
+
+// Close the Features dropdown menu if the user clicks outside of it
+
+window.addEventListener('mouseup', function(event){
+	var dropFeatures = document.querySelector('.features-dropdown');
+    var btnFeatures = document.getElementById("features");
+	if (event.target != dropFeatures && event.target != btnFeatures){
+        dropFeatures.classList.remove ('show');
+    }
+});
+
+// Close the Company dropdown menu if the user clicks outside of it
+
+
+window.addEventListener('mouseup', function(event){
+	var dropCompany = document.querySelector('.company-dropdown');
+    var btnCompany = document.getElementById("company");
+	if (event.target != dropCompany && event.target != btnCompany){
+        dropCompany.classList.remove ('show');
+    }
+});
